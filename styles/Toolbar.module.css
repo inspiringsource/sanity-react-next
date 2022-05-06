@@ -1,0 +1,32 @@
+.main {
+    margin: auto;
+    width: 750px;
+    display: flex;
+    max-width: 100%;
+    color: #d2d8f9;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    justify-content: center;
+    transition: opacity 1s ease;
+    background-size: 250%;
+    background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+    animation: bg-animation 5s infinite alternate;
+    border-radius: 0px 0px 5px 5px;
+    min-width: 100vw;
+  }
+  @keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+    
+    100% {
+      background-position: right;
+    }
+    }
+  .main div {
+    margin: 25px;
+    cursor: pointer;
+  }
+  .main div:hover {
+    color: orange;
+  }
