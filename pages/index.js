@@ -34,9 +34,9 @@ export default function Home({ posts }) {
     <div>
       <Toolbar />
       <div className={styles.main}>
-        <h1>Upcoming events</h1>
+        <h1>Developer Events</h1>
 
-        <h3>I plan to attend:</h3>
+        <h3>Zürich area</h3>
 
         <div className={styles.feed}>
           {mappedPosts.length ? mappedPosts.map((p, index) => (

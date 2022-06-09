@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import styles from '../../styles/Post.module.css';
 import BlockContent from '@sanity/block-content-to-react';
 import { Toolbar } from '../../components/toolbar';
+import { useRouter } from 'next/router'
 
 export const Post = ({ title, body, image }) => {
+  const router = useRouter()
+
   const [imageUrl, setImageUrl] = useState('');
 
   useEffect(() => {
@@ -20,12 +23,19 @@ export const Post = ({ title, body, image }) => {
     <div>
       <Toolbar />
       <div className={styles.main}>
-        <h1>{title}</h1>
+        <h1 style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
+        }}>{title}</h1>
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
         <div className={styles.body}>
           <BlockContent blocks={body} />
         </div>
+        <button type="button" onClick={() => router.push('/')}>
+        &laquo;  Go back
+      </button>
       </div>
     </div>
   );
